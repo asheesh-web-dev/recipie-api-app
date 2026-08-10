@@ -6,16 +6,20 @@ on: [push]
 jobs:
   test-lint:
     name: Test and lint
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
+    environment: development
     steps:
       - name: Login to Docker Hub
-        uses: docker/login-action@v4
+        uses: docker/login-action@v3
         with:
           username: ${{secrets.DOCKER_HUB_USER}}
           password: ${{secrets.DOCKER_HUB_TOKEN}}
 
       - name: Checkout
-        uses: actions/Checkout@v7
+        uses: actions/checkout@v4
+
+      - name: Create local env file from template
+        run: cp .env.dev.example .env.dev
 
       - name: test
         run: docker compose run --rm recipie-app-backend sh -c "python manage.py test"
