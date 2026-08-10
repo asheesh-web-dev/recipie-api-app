@@ -1,0 +1,39 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Local Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment secrets (Crucial for security!)
+.env
+.env.*
+secrets.json
+
+# Local SQLite databases (Prevents overwriting production data)
+*.sqlite3
+*.db
+
+# Django media files (User uploads should not be hardcoded in images)
+**/media/
+# Optional: Uncomment if you want to run collectstatic during the build
+# **/static/
+
+# OS-specific system files
+.DS_Store
+Thumbs.db
+
+# Git configuration
+.git
+.gitignore
+
+# extra dockerfiles
+Dockerfile.1
+Dockerfile.2
+Dockerfile.3
