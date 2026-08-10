@@ -19,6 +19,8 @@ services:
       - "8000:8000"
     env_file:
       - .env.dev
+    # This keeps the container alive in the background without starting Django
+    command: tail -f /dev/null
     depends_on:
       - recipie-app-db
 

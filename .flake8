@@ -1,0 +1,32 @@
+[flake8]
+# Exclude directories that don't need linting
+exclude =
+    .git,
+    __pycache__,
+    *migrations*,
+    venv,
+    .venv,
+    env,
+    .env,
+    build,
+    dist
+
+# Match maximum line length with Black formatter (88) or standard Django style (119)
+max-line-length = 119
+
+# Ignore specific error codes that conflict with modern formatting or Django styles
+# E203: Whitespace before ':' (Conflicts with Black)
+# W503: Line break occurred before a binary operator (Conflicts with Black)
+# E501: Line too long (Handled by max-line-length or per-file-ignores)
+extend-ignore = E203, W503
+
+# Custom rules for specific files
+per-file-ignores =
+    # Allow local settings to have unused or wildcard imports
+    *settings*.py: F401, F403, E501
+    
+    # Allow __init__.py files to have unused imports (often used for clean API exposure)
+    __init__.py: F401
+
+# Prevent overly complex code (10 is standard, adjust if needed)
+max-complexity = 10

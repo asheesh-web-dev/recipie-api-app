@@ -8,3 +8,8 @@ dependencies = [
     "django>=6.1",
     "djangorestframework>=3.18.0",
 ]
+
+[dependency-groups]
+dev = [
+    "flake8>=7.3.0",
+]
