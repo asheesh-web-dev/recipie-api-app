@@ -15,7 +15,9 @@
         "ms-python.black-formatter",
         "ms-python.mypy-type-checker",
         "ms-python.isort",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "docsmsft.docs-markdown",
+        "redhat.vscode-yaml"
       ]
     }
   }
