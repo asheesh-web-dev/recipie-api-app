@@ -32,6 +32,7 @@ type(scope): short description in present tense
 | **Refactoring Code (No Feature Changes, No Bug Fixes)** | `refactor/cleanup-views` or `refactor/recipe-logic`        | `refactor(views): split recipe list and detail logic into separate files` |
 | **Moving Source code(Python/Docker files)**             | `chore/move-setting`                                       | `chore(config): move settings.py into dedicated configuration folder`     |
 | **Removing Source code(Python/Docker files)**           | `chore/cleanup-legacy-code` or `chore/remove-unused-utils` | `chore(utils): delete deprecated text formatting utilities`               |
+| **Test Linter**                                         | `chore/manage-py-lint-test`                                | `chore(manage.py): add temporary variable to test linting`                |
 | **Adding a docs**                                       | `docs/add-git-naming-standards`                            | `docs(git): add documentation for git naming standards`                   |
 | **Moving Doc Files around**                             | `docs/reorganize-guides`                                   | `docs(wiki): move linux chown guide to dedicated documentation folder`    |
 | **Removing Doc Files**                                  | `chore/cleanup-chomod-guid`                                | `docs(wiki): delete chmod guide`                                          |
