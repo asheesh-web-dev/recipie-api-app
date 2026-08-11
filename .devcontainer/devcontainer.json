@@ -1,0 +1,21 @@
+{
+  "name": "Recipe API Development",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "recipie-app-backend",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "ms-python.black-formatter",
+        "ms-python.mypy-type-checker",
+        "ms-python.isort"
+      ]
+    }
+  }
+}

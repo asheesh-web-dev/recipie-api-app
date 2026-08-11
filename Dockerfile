@@ -21,6 +21,11 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # --- Stage 2: Development stage
 FROM python:3.14-alpine3.23 AS development
 
+# install development tools
+RUN apk add --no-cache \
+    git \
+    openssh-client
+
 # Install uv from the official image
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
