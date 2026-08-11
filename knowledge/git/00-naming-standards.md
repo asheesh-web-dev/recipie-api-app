@@ -25,15 +25,27 @@ type(scope): short description in present tense
 - **`scope`** _(Optional)_: The part of the app affected wrapped in parentheses (e.g., `deps`, `auth`, `ci`).
 - **`description`:** A short, lowercase summary starting with an imperative verb (e.g., "add", "fix", "update", not "added" or "fixing").
 
-### Examples:
+## Examples:
+
+| **Task**                                                | **Branch names**                                           | **Commit messages**                                                       |
+| ------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Refactoring Code (No Feature Changes, No Bug Fixes)** | `refactor/cleanup-views` or `refactor/recipe-logic`        | `refactor(views): split recipe list and detail logic into separate files` |
+| **Moving Source code(Python/Docker files)**             | `chore/move-setting`                                       | `chore(config): move settings.py into dedicated configuration folder`     |
+| **Removing Source code(Python/Docker files)**           | `chore/cleanup-legacy-code` or `chore/remove-unused-utils` | `chore(utils): delete deprecated text formatting utilities`               |
+| **Adding a docs**                                       | `docs/add-git-naming-standards`                            | `docs(git): add documentation for git naming standards`                   |
+| **Moving Doc Files around**                             | `docs/reorganize-guides`                                   | `docs(wiki): move linux chown guide to dedicated documentation folder`    |
+| **Removing Doc Files**                                  | `chore/cleanup-chomod-guid`                                | `docs(wiki): delete chmod guide`                                          |
+| **updaing docs**                                        | `docs/update-naming-standards` or `docs/fix-readme-typos`  | `docs(git): update branch naming rules to include refactor and perf`      |
+| **Adding a Package**                                    | `chore/add-django-stubs`                                   | `chore(deps): add django-stubs for mypy type checking`                    |
+| **Adding a extension in devcontainer.json**             | `chore/add-prettier-extension`                             | `chore(devcontainer): add prettier extension for automated formatting`    |
+
+### commit message
 
 - `chore(deps): add django-stubs for mypy type checking`
 - `fix(ci): silence mypy import-untyped warnings for django`
 - `chore(mypy): update pyproject.toml to ignore missing imports`
 - `chore(devcontainer): add prettier extension for automated formatting`
 - `docs(git): add documentation for git naming standards`
-
----
 
 ## Putting It All Together (Your Terminal Commands)
 
