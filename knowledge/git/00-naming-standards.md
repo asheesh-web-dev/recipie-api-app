@@ -2,12 +2,14 @@
 
 branches should be named using **`lowercase letters, hyphens (-), and forward slashes (/) to categorize the work`**. The standard format is `user/category/short-description`.
 
-| **Category**                  | **Purpose**                                            | **Example**                                         |
-| ----------------------------- | ------------------------------------------------------ | --------------------------------------------------- |
-| **`feature/`** or **`feat/`** | Adding new functionality or code.                      | `john/feature/django-stubs` or `john/feat/mypy-fix` |
-| **`bugfix/`** or **`fix/`**   | Fixing broken code, syntax errors, or failing tests.   | `john/bugfix/mypy-import-error`                     |
-| **`chore/`**                  | Updating configs, dependencies, or `.gitignore` files. | `john/chore/add-django-stubs`                       |
-| **`docs/`**                   | Changing documentation or the `README.md` file.        | `docs/update-onboarding-guide`                      |
+| **Category**          | **Purpose**                                 | **Example**                                   |
+| --------------------- | ------------------------------------------- | --------------------------------------------- |
+| `feat/` or `feature/` | New functionality, app, or endpoint         | `feat/users-jwt-authentication`               |
+| `fix/` or `bugfix/`   | Bug fixes in endpoints or logic             | `fix/orders-null-total-amount-bug`            |
+| `refactor/`           | Code cleanup without functional change      | `refactor/products-optimize-queryset-queries` |
+| `test/`               | Adding or updating unit/integration tests   | `test/payments-stripe-webhook-tests`          |
+| `docs/`               | API documentation (Swagger/OpenAPI, README) | `docs/swagger-schema-annotations`             |
+| `chore/`              | Dependencies, settings, CI/CD               | `chore/upgrade-djangorestframework-3-15`      |
 
 ---
 
@@ -25,6 +27,16 @@ type(scope): short description in present tense
 - **`scope`** _(Optional)_: The part of the app affected wrapped in parentheses (e.g., `deps`, `auth`, `ci`).
 - **`description`:** A short, lowercase summary starting with an imperative verb (e.g., "add", "fix", "update", not "added" or "fixing").
 
+### Allowed Types
+
+- `feat`: A new API endpoint, serializer, view, or model.
+- `fix`: A bug fix in logic, queryset, or validation.
+- `refactor`: Restructuring DRF views/serializers without altering behavior.
+- `perf`: Database query optimizations (`select_related`, `prefetch_related`, indexing).
+- `test`: Adding API Client tests or pytest suites.
+- `docs`: OpenAPI schema additions or README updates.
+- `chore`: Package updates, settings tweaks.
+
 ## Examples:
 
 | **Task**                                                | **Branch names**                                           | **Commit messages**                                                       |
@@ -39,6 +51,7 @@ type(scope): short description in present tense
 | **updaing docs**                                        | `docs/update-naming-standards` or `docs/fix-readme-typos`  | `docs(git): update branch naming rules to include refactor and perf`      |
 | **Adding a Package**                                    | `chore/add-django-stubs`                                   | `chore(deps): add django-stubs for mypy type checking`                    |
 | **Adding a extension in devcontainer.json**             | `chore/add-prettier-extension`                             | `chore(devcontainer): add prettier extension for automated formatting`    |
+| **Adding a test**                                       | `test/add-two-numbers-calculator`                          | `test(calculator): add simple test for adding two numbers`                |
 
 ### commit message
 
