@@ -50,6 +50,7 @@ type(scope): short description in present tense
 | **Removing Doc Files**                                  | `chore/cleanup-chomod-guid`                                | `docs(wiki): delete chmod guide`                                          |
 | **updaing docs**                                        | `docs/update-naming-standards` or `docs/fix-readme-typos`  | `docs(git): update branch naming rules to include refactor and perf`      |
 | **Adding a Package**                                    | `chore/add-django-stubs`                                   | `chore(deps): add django-stubs for mypy type checking`                    |
+|**Adding postres dependency**|`chore/install-postgres-adapter`|`chore(deps): install psycopg2 postgres adapter`|
 | **Adding a extension in devcontainer.json**             | `chore/add-prettier-extension`                             | `chore(devcontainer): add prettier extension for automated formatting`    |
 | **Adding a test**                                       | `test/add-two-numbers-calculator`                          | `test(calculator): add simple test for adding two numbers`                |
 
