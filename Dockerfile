@@ -10,6 +10,12 @@ WORKDIR /app
 # Enable bytecode compilation
 ENV UV_COMPILE_BYTECODE=1 
 
+# Install build dependencies required to compile psycopg[c] from source
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    postgresql-dev
+
 # Copy config files first to leverage docker caching
 COPY pyproject.toml uv.lock ./
 
@@ -25,6 +31,12 @@ FROM python:3.14-alpine3.23 AS development
 RUN apk add --no-cache \
     git \
     openssh-client
+
+# Install runtime dependencies for psycopg[c] (libpq) and dev tools
+# `postgresql-client` is just to access the postgresql service.
+RUN apk add --no-cache \
+    postgresql-libs \
+    postgresql-client
 
 # Install uv from the official image
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
