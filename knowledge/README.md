@@ -5,6 +5,11 @@
 ### Django
 
 - [naming standards](./django/00-naming-standards.md)
+- [custom management commands](./django/01-custom-management-commands.md)
+
+### Python
+
+- [decorators](python/00-decorators.md)
 
 ### Postgres
 
