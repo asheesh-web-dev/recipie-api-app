@@ -21,7 +21,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create local env file from template
-        run: cp .env.dev.example .env.dev
+        run: |
+          cat > .env.dev << EOF
+          POSTGRES_DB={{vars.POSTGRES_DB}}
+          POSTGRES_USER={{secrets.POSTGRES_USER}}
+          POSTGRES_PASSWORD={{secrets.POSTGRES_PASSWORD}}
+          DEBUG={{vars.DEBUG}}
+          SECRET_KEY={{secrets.SECRET_KEY}}
+          DB_NAME={{vars.DB_NAME}}
+          DB_USER={{secrets.DB_USER}}
+          DB_PASSWORD={{secrets.DB_PASSWORD}}
+          DB_HOST={{vars.DB_HOST}}
+          DB_PORT={{vars.DB_PORT}}
+          EOF
 
       - name: test
         run: docker compose run --rm recipie-app-backend sh -c "python manage.py wait_for_db && python manage.py test"
