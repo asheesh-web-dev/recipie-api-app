@@ -23,7 +23,7 @@ This matches the branch names and structures messages so they are clean, readabl
 type(scope): short description in present tense
 ```
 
-- **`type`:** The category of the change (e.g., `feat`, `fix`, `chore`, `docs`).
+- **`type`:** The category of the change (e.g., `feat`, `fix`, `chore`, `docs`, `ci`).
 - **`scope`** _(Optional)_: The part of the app affected wrapped in parentheses (e.g., `deps`, `auth`, `ci`).
 - **`description`:** A short, lowercase summary starting with an imperative verb (e.g., "add", "fix", "update", not "added" or "fixing").
 
@@ -50,9 +50,10 @@ type(scope): short description in present tense
 | **Removing Doc Files**                                  | `chore/cleanup-chomod-guid`                                | `docs(wiki): delete chmod guide`                                          |
 | **updaing docs**                                        | `docs/update-naming-standards` or `docs/fix-readme-typos`  | `docs(git): update branch naming rules to include refactor and perf`      |
 | **Adding a Package**                                    | `chore/add-django-stubs`                                   | `chore(deps): add django-stubs for mypy type checking`                    |
-|**Adding postres dependency**|`chore/install-postgres-adapter`|`chore(deps): install psycopg2 postgres adapter`|
+| **Adding postres dependency**                           | `chore/install-postgres-adapter`                           | `chore(deps): install psycopg2 postgres adapter`                          |
 | **Adding a extension in devcontainer.json**             | `chore/add-prettier-extension`                             | `chore(devcontainer): add prettier extension for automated formatting`    |
 | **Adding a test**                                       | `test/add-two-numbers-calculator`                          | `test(calculator): add simple test for adding two numbers`                |
+| **Update GitHub Actions workflow file(checks.yml)**     | `ci/add-wait-for-db-to-tests`                              | `ci(checks): ensure database is ready before executing test suite`        |
 
 ### commit message
 
