@@ -14,7 +14,10 @@
         "ms-python.flake8",
         "ms-python.black-formatter",
         "ms-python.mypy-type-checker",
-        "ms-python.isort"
+        "ms-python.isort",
+        "esbenp.prettier-vscode",
+        "docsmsft.docs-markdown",
+        "redhat.vscode-yaml"
       ]
     }
   }
