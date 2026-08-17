@@ -34,8 +34,7 @@ jobs:
           DB_HOST=${{vars.DB_HOST}}
           DB_PORT=${{vars.DB_PORT}}
           EOF
-
-          cat .env.dev
+          
       - name: test
         run: docker compose run --rm recipie-app-backend sh -c "python manage.py wait_for_db && python manage.py test"
       - name: lint
