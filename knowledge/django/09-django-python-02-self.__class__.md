@@ -28,7 +28,7 @@ class Parent:
         print(f"Class attribute 'species': {current_class.species}")
 
 class Child(Parent):
-species = "Sub-Human"
+    species = "Sub-Human"
 
 # 1. Testing with the Parent class
 p = Parent()
