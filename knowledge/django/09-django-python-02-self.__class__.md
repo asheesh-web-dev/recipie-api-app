@@ -77,7 +77,7 @@ class Car(Vehicle):
 # Using self.__class__
 my_car = Car()
 new_car = my_car.clone()
-print(type(new_car)) # Output: <class '**main**.Car'> (Correct!)
+print(type(new_car)) # Output: <class '__main__.Car'> (Correct!)
 
 ```
 
