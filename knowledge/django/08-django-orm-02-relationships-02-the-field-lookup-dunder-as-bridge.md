@@ -80,39 +80,43 @@ You can chain multiple double underscores together to travel across as many tabl
 
 Let's find all Publishers (Users) who have published at least one book tagged with "Python".
 
-# Path: User -> Post/Book relation -> Tag relation -> Tag name fieldtech_publishers = User.objects.filter(book_query__tags__name\_\_iexact="Python")
+```python
 
-- book_query: Jumps from User to Book table.
-- tags: Jumps from Book to Tag table.
-- name: Selects the text column on the Tag table.
-- iexact: Applies the case-insensitive matching rule.
+
+# Path: User -> Post/Book relation -> Tag relation -> Tag name field
+tech_publishers = User.objects.filter(book_query__tags__name__iexact="Python")
+
+```
+- **`book_query`:** Jumps from `User` to `Book` table.
+- **`tags`:** Jumps from `Book` to `Tag` table.
+- **`name`:** Selects the **text column** on the `Tag` table.
+- **`iexact`:** Applies the case-insensitive matching rule.
 
 ---
 
 ## Level 4: Special Lookups (Dates and Times)
 
-Django provides specialized date extractors that utilize the \_\_ syntax to drill down into specific components of a datetime field.
+Django provides specialized date extractors that utilize the `__` syntax to drill down into specific components of a datetime field.
+
+```python
 
 # Find all posts published in the year 2026
-
-Post.objects.filter(published_date\_\_year=2026)
+Post.objects.filter(published_date__year=2026)
 
 # Find all posts published in the month of June (any year)
-
-Post.objects.filter(published_date\_\_month=6)
+Post.objects.filter(published_date__month=6)
 
 # Find all posts published on a Monday (Django uses 1 for Sunday, 2 for Monday... 7 for Saturday)
+Post.objects.filter(published_date__week_day=2)
 
-Post.objects.filter(published_date\_\_week_day=2)
-
+```
 ---
 
 ## Quick Reference Cheat Sheet
 
-| Syntax Example                             | What it tells Django to do                                             |
+| **Syntax Example**                             | **What it tells Django to do**                                             |
 | ------------------------------------------ | ---------------------------------------------------------------------- |
-| views\_\_gte=10                            | "Look at the views field; check if it is Greater Than or Equal to 10." |
-| title\_\_startswith="A"                    | "Look at the title field; check if it begins with 'A'."                |
-| author__profile_query__bio\_\_isnull=False | "Go to author, jump to their profile, check if the bio is not empty."  |
+| `views__gte=10`                            | "Look at the `views` field; check if it is Greater Than or Equal to 10." |
+| `title__startswith="A"`                    | "Look at the `title` field; check if it begins with 'A'."                |
+| `author__profile_query__bio__isnull=False` | "Go to author, jump to their profile, check if the bio is not empty."  |
 
-Would you like to see how to combine multiple \_\_ conditions using Q objects for complex OR queries?
