@@ -30,13 +30,15 @@ class Parent:
 class Child(Parent):
 species = "Sub-Human"
 
-# 1. Testing with the Parent classp = Parent()
+# 1. Testing with the Parent class
+p = Parent()
 p.identify()
 # Output:
 # My instance belongs to: Parent
 # Class attribute 'species': Human
 
-# 2. Testing with the Child class (Inherited method)c = Child()
+# 2. Testing with the Child class (Inherited method)
+c = Child()
 c.identify()
 # Output:
 # My instance belongs to: Child
